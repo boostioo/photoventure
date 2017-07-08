@@ -1,13 +1,13 @@
 require 'rails_helper.rb'
 
-feature 'A user is able to' do  
-  scenario 'create a post' do
+feature 'Creating posts' do  
+  scenario 'can create a post' do
     visit '/'
     click_link 'New Post'
-    fill_in 'Description', with: 'first junior rails project' 
+   
+    fill_in 'Description', with: 'nom nom nom #coffeetime' 
     click_button 'Create Post'
-    
-    #spacings for different actions
-    expect(page).to have_content('Post created!')
+    expect(page).to have_content('#coffeetime')
+   
   end
-end 
+end  

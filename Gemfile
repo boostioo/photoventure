@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'simple_form'
-gem 'bootstrap-sass'
+gem "bootstrap-sass", "~> 3.3"
+gem "font-awesome-rails", "~> 4.3"
+gem "simple_form", "~> 3.1.0"
 gem 'paperclip', '~> 4.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -38,7 +39,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5'
-  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -50,6 +50,7 @@ group :development do
 end
 
 group :test do
-  gem "capybara"
+  gem "capybara", "~> 2.4"
+  gem "factory_girl_rails", "~> 4.5"
 end
 

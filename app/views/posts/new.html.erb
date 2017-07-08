@@ -1,2 +1,9 @@
 <header>New Post</header>
-<%= render "form", post: @post  %>
+<%= simple_form_for @post do |f| %>
+  <%= f.input :image %>
+  <%= f.input :description %>
+
+  <%= f.button :submit, class: 'btn-primary' %>
+<% end %>
+
+<%= link_to "Create Post", posts_path %>
