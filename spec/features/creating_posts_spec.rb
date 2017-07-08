@@ -4,7 +4,7 @@ feature 'A user is able to' do
   scenario 'create a post' do
     visit '/'
     click_link 'New Post'
-    fill_in 'Caption', with: 'first junior rails project' 
+    fill_in 'Description', with: 'first junior rails project' 
     click_button 'Create Post'
     
     #spacings for different actions
