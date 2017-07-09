@@ -16,6 +16,12 @@ Evaluation
 
 This application will be evaluated based on the following metrics:
 
-Compliance with Ruby syntax rules.
-Demonstrated understanding of Rails best practices
-BDD/TDD tests written in either RSpec or Minitest.
+- Compliance with Ruby syntax rules.
+- Demonstrated understanding of Rails best practices
+- BDD/TDD tests written in either RSpec or Minitest.
+
+References
+----------
+
+- Rails 4 in Action
+- www.devwalks.com
