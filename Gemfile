@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem "bootstrap-sass", "~> 3.3"
 gem "font-awesome-rails", "~> 4.3"
 gem "simple_form", "~> 3.1.0"
+#for image uploading
 gem 'paperclip', '~> 4.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
@@ -49,6 +50,7 @@ group :development do
   gem 'spring'
 end
 
+#using same version as Rails 4 in Action 
 group :test do
   gem "capybara", "~> 2.4"
   gem "factory_girl_rails", "~> 4.5"
