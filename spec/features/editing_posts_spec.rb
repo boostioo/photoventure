@@ -1,15 +1,16 @@
 require 'rails_helper'
 
-feature 'Editing post' do  
-  background do
-    post = create(:post)
+feature 'Editing post' do
+  before do
+    FactoryGirl.create(:post, description: "Edit test")
 
-    visit '/'
+    visit "/"
     find(:xpath, "//a[contains(@href,'posts/1')]").click
-    click_link 'Edit Post'
+    click_link "Edit Post"
   end
-  scenario 'Can edit a post' do
-    fill_in 'Description', with: "Test editing post"
+
+  scenario 'able to update' do
+    fill_in 'Description', with: "Test updating post"
     click_button 'Update Post'
 
     expect(page).to have_content("Post updated.")

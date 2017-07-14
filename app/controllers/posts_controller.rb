@@ -43,7 +43,7 @@ class PostsController < ApplicationController
         @post.destroy
       
         flash[:alert] = "Post deleted."
-        redirect_to Post_path
+        redirect_to post_path
       end
     
     private
