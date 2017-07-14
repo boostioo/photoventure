@@ -13,7 +13,7 @@ class PostsController < ApplicationController
             flash[:success] = "Post created."
             redirect_to @post
         else
-            flash[:alert] = "Post not created."
+            flash[:error] = "Post not created."
             render :new
         end
     end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
           flash[:success] = "Post updated."
           redirect_to @post
         else
-          flash[:alert] = "Post not updated."
+          flash[:error] = "Post not updated."
           render :edit
         end
       end
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
         @post.destroy
       
-        flash[:alert] = "Post deleted."
+        flash[:error] = "Post deleted."
         redirect_to posts_path
       end
     
@@ -55,7 +55,7 @@ class PostsController < ApplicationController
     def set_post
         @post = Post.find(params[:id])
         rescue ActiveRecord::RecordNotFound
-        flash[:alert] = "The post you were looking for could not be found."
+        flash[:error] = "The post you were looking for could not be found."
         redirect_to posts_path
     end
 end
