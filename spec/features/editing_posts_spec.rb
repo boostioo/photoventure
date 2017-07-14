@@ -9,7 +9,7 @@ feature 'Editing post' do
     click_link "Edit Post"
   end
 
-  scenario 'able to update' do
+  scenario 'successfully' do
     fill_in 'Description', with: "Test updating post"
     click_button 'Update Post'
 

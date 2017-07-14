@@ -28,7 +28,7 @@ class PostsController < ApplicationController
       
       def update
         @post = Post.find(params[:id])
-      
+        #unsure if I need to check for "if unchanged"
         if @post.update(post_params)
           flash[:success] = "Post updated."
           redirect_to @post
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
         @post.destroy
       
         flash[:alert] = "Post deleted."
-        redirect_to post_path
+        redirect_to posts_path
       end
     
     private
@@ -56,6 +56,6 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
         rescue ActiveRecord::RecordNotFound
         flash[:alert] = "The post you were looking for could not be found."
-        redirect_to post_path
+        redirect_to posts_path
     end
 end

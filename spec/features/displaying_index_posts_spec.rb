@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-feature 'Index displays posts' do  
+feature 'Displaying posts' do  
   scenario 'with correct information' do
-    create(:post, description: "Test one")
-    create(:post, description: "Test two")
+    FactoryGirl.create(:post, description: "Test one")
+    FactoryGirl.create(:post, description: "Test two")
 
     visit '/'
     expect(page).to have_content("Test one")
