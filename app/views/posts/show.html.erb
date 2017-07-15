@@ -7,14 +7,13 @@
           <p class="caption">
             <%= @post.description %>
           </p>
-            <div class="text-center edit-links">    
-                <li><%= link_to "Edit Post", edit_post_path(@post), class: 'btn-primary' %></li>
-                |
-                <li><%= link_to "Delete Post", post_path(@post), class: 'btn-danger',
-                    method: :delete,
-                    data: { confirm: "Are you sure you want to delete this post?" } %>
-                </li>
-            </div>
+          <ul class="actions">
+            <li><%= link_to "Edit Post", edit_post_path(@post), class: 'edit' %></li>
+            <li><%= link_to "Delete Post", post_path(@post), class: 'delete',
+                method: :delete,
+                data: { confirm: "Are you sure you want to delete this post?" } %>
+            </li>
+          </ul>
         </div>
     </div>
 </div>

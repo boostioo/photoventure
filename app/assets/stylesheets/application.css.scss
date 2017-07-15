@@ -1,18 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
@@ -43,10 +28,50 @@ body {
   padding-top: 70px;
 }
 
+// buttons 
+ul.actions {
+  @extend .list-unstyled;
+  @extend .list-inline;
+}
+
+a.new, a.edit, a.delete {
+  @extend .btn;
+
+  &:before {
+    font-family: "FontAwesome";
+    padding-right: 0.5em;
+  }
+}
+
+a.new {
+  @extend .btn-success;
+
+  &:before {
+    @extend .fa-plus;
+  }
+}
+
+a.edit {
+  @extend .btn-primary;
+
+  &:before {
+    @extend .fa-pencil;
+  }
+}
+
+a.delete {
+  @extend .btn-danger;
+
+  &:before {
+    @extend .fa-trash;
+  }
+}
+
 form {
   max-width: 500px;
 }
 
+//navigation bar
 .navbar-brand {
   a {
     color: #125688;
@@ -66,6 +91,7 @@ form {
   margin: 0 auto;
 }
 
+//borders for posts
 .posts-wrapper {
   padding-top: 40px;
   margin: 0 auto;
@@ -103,9 +129,9 @@ form {
   padding: 24px 24px;
   font-size: 15px;
   line-height: 18px;
-
 }
 
+// forms
 .form-wrapper {
   width: 60%;
   margin: 20px auto;
@@ -120,6 +146,7 @@ form {
   margin-bottom: 40px;
 }
 
+// animated sliding for navigation links
 .sliding-middle-out {
     display: inline-block;
     position: relative;
@@ -137,9 +164,4 @@ form {
 .sliding-middle-out:hover:after {
     width: 100%;
     background: red;
-}
-
-.edit-links {
-  margin-top: 20px;
-  margin-bottom: 40px;
 }
