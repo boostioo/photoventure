@@ -1,50 +1,50 @@
 class PostsController < ApplicationController
     def index
-        @post = Post.all
+      @post = Post.all
     end
     
     def new
-        @post = Post.new
+      @post = Post.new
     end
     
     def create
-        @post = Post.create(post_params)
-        if @post.save
-            flash[:success] = "Post created."
-            redirect_to @post
-        else
-            flash[:error] = "Post not created."
-            render :new
-        end
+      @post = Post.create(post_params)
+      if @post.save
+        flash[:success] = "Post created."
+        redirect_to @post
+      else
+        flash[:error] = "Post not created."
+        render :new
+      end
     end
     
     def show
-        @post = Post.find(params[:id])
+      @post = Post.find(params[:id])
     end
     
-      def edit
-        @post = Post.find(params[:id])
-      end
+    def edit
+      @post = Post.find(params[:id])
+    end
       
-      def update
-        @post = Post.find(params[:id])
-        #unsure if I need to check for "if unchanged"
-        if @post.update(post_params)
-          flash[:success] = "Post updated."
-          redirect_to @post
-        else
-          flash[:error] = "Post not updated."
-          render :edit
-        end
+    def update
+      @post = Post.find(params[:id])
+      #unsure if I need to check for "if unchanged"
+      if @post.update(post_params)
+        flash[:success] = "Post updated."
+        redirect_to @post
+      else
+        flash[:error] = "Post not updated."
+        render :edit
       end
+    end
     
-      def destroy
-        @post = Post.find(params[:id])
-        @post.destroy
-      
-        flash[:error] = "Post deleted."
-        redirect_to posts_path
-      end
+    def destroy
+      @post = Post.find(params[:id])
+      @post.destroy
+    
+      flash[:error] = "Post deleted."
+      redirect_to posts_path
+    end
     
     private
     
@@ -53,9 +53,9 @@ class PostsController < ApplicationController
     end
     
     def set_post
-        @post = Post.find(params[:id])
-        rescue ActiveRecord::RecordNotFound
-        flash[:error] = "The post you were looking for could not be found."
-        redirect_to posts_path
+      @post = Post.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      flash[:error] = "The post you were looking for could not be found."
+      redirect_to posts_path
     end
 end
