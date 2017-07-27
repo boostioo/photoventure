@@ -11,10 +11,8 @@
 
 .post {
   background-color: #fff;
-  border-color: #edeeee;
-  border-style: solid;
+  border: 1px solid #edeeee; // simplified
   border-radius: 3px;
-  border-width: 1px;
   margin-bottom: 60px;
 }
 
