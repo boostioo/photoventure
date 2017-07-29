@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem "bootstrap-sass", "~> 3.3"
 gem "font-awesome-rails", "~> 4.3"
 gem "simple_form", "~> 3.1.0"
+#for user authentication
+gem 'devise'
 #for image uploading
 gem 'paperclip', '~> 4.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
